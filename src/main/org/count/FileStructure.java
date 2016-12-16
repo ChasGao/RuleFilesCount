@@ -62,7 +62,13 @@ public class FileStructure {
 	}
 	
 	public void print(FileStructure fileStructure){
-		
+		int totalRuleNums=0;
+		for(Map.Entry<String, FileStructure> entry:this.getSubFile().entrySet()){
+			String filePath=entry.getKey();
+			FileStructure fileStructure2=entry.getValue();
+			System.out.println(filePath+"规则数量是："+fileStructure2.getCurrDirRuleNums());
+			totalRuleNums=totalRuleNums+fileStructure2.getCurrDirRuleNums();
+		}
 		
 	}
 	
