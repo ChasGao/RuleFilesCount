@@ -8,15 +8,6 @@ public class FileStructure {
 	 * 当前文件路径名称
 	 */
 	private String currentName;
-	
-	/**
-	 * 是否是文件
-	 */
-	private boolean isFile = false;
-	/**
-	 * 是否是目录
-	 */
-	private boolean isDirectory = false;
 	/**
 	 * 当前目录下规则文件的数量
 	 */
@@ -29,13 +20,7 @@ public class FileStructure {
 	 * 子文件
 	 */
 	private Map<String ,FileStructure> subFile=new HashMap<String ,FileStructure>();
-	public boolean isFile() {
-		return isFile;
-	}
-	public boolean isDirectory() {
-		return isDirectory;
-	}
-	public int getCurrDirRuleFileNums() {
+ 	public int getCurrDirRuleFileNums() {
 		return currDirRuleFileNums;
 	}
 	public int getCurrDirRuleNums() {
@@ -43,12 +28,6 @@ public class FileStructure {
 	}
 	public Map<String, FileStructure> getSubFile() {
 		return subFile;
-	}
-	public void setFile(boolean isFile) {
-		this.isFile = isFile;
-	}
-	public void setDirectory(boolean isDirectory) {
-		this.isDirectory = isDirectory;
 	}
 	public void setCurrDirRuleFileNums(int currDirRuleFileNums) {
 		this.currDirRuleFileNums = currDirRuleFileNums;
@@ -66,6 +45,25 @@ public class FileStructure {
 		this.currentName = currentName;
 	}
 	
+	public FileStructure() {
+	}
+	public FileStructure(String currentName, int currDirRuleFileNums,
+			int currDirRuleNums) {
+		this.currentName = currentName;
+		this.currDirRuleFileNums = currDirRuleFileNums;
+		this.currDirRuleNums = currDirRuleNums;
+	}
+	public FileStructure(String currentName, int currDirRuleFileNums,
+			int currDirRuleNums, Map<String, FileStructure> subFile) {
+		this.currentName = currentName;
+		this.currDirRuleFileNums = currDirRuleFileNums;
+		this.currDirRuleNums = currDirRuleNums;
+		this.subFile = subFile;
+	}
 	
+	public void print(FileStructure fileStructure){
+		
+		
+	}
 	
 }
